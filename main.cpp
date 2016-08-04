@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <SDL2/SDL.h>
-#include <SDL2/SDL_video.h>
+#include "cleanup.h"
 
 int main(int argc, char *argv[])
 {
@@ -47,8 +47,9 @@ int main(int argc, char *argv[])
         SDL_RenderPresent(ren);
         SDL_Delay(1000);
     }
-    SDL_DestroyTexture(tex);
-    SDL_DestroyRenderer(ren);
-    SDL_DestroyWindow(win);
+//    SDL_DestroyTexture(tex);
+//    SDL_DestroyRenderer(ren);
+//    SDL_DestroyWindow(win);
+    cleanup(tex, ren, win);
     SDL_Quit();
 }
